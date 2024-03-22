@@ -5,12 +5,12 @@ import { useDispatch } from "react-redux";
 const SearchBox = () => {
   let [keyword, setKeyword] = useState("");
   let dispatch = useDispatch();
-  const searchByName = (event) => {
+  const searching = (event) => {
     event.preventDefault();
-    dispatch({ type: "SEARCH_BY_USERNAME", payload: { keyword } });
+    dispatch({ type: "SEARCHING", payload: { keyword } });
   };
   return (
-    <Form onSubmit={searchByName} className="search-form">
+    <Form onSubmit={searching} className="search-form">
       <Row>
         <Col>
           <Form.Control

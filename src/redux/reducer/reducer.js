@@ -14,7 +14,7 @@ const contactReducer = (state = initialState, action) => {
         ],
       };
 
-    case "SEARCH_BY_USERNAME":
+    case "SEARCHING":
       return { ...state, keyword: payload.keyword };
     default:
       return { ...state };
