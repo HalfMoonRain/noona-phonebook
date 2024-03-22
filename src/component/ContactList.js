@@ -4,11 +4,16 @@ import ContactItem from "./ContactItem";
 import { useSelector } from "react-redux";
 
 const ContactList = () => {
-  const { contactList, keyword } = useSelector((state) => state);
+  const contactList = useSelector((state) => state.contactList);
+  const keyword = useSelector((state) => state.keyword);
+
   let [filteredList, setFilteredList] = useState([]);
   useEffect(() => {
     if (keyword !== "") {
-      let list = contactList.filter((item) => item.name.includes(keyword));
+      let list = contactList.filter(
+        (item) =>
+          item.name.includes(keyword) || item.phoneNumber.includes(keyword)
+      );
 
       setFilteredList(list);
     } else {

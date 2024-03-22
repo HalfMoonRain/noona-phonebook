@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const SearchBox = () => {
   let [keyword, setKeyword] = useState("");
   let dispatch = useDispatch();
-  let { contact } = useSelector((state) => state);
   const searchByName = (event) => {
     event.preventDefault();
     dispatch({ type: "SEARCH_BY_USERNAME", payload: { keyword } });
